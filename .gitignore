@@ -1,0 +1,25 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Project-generated files
+runtime_generated/
+static/generated/
+aug_dataset/
+
+# Editor and OS files
+.vscode/
+Thumbs.db
+.DS_Store
+

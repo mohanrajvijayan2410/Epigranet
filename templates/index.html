@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EpigraNet-Tamil OCR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css', v='20260401d') }}" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">◎</div>
+        <h1>EpigraNet-Tamil - Tamil Epigraphical OCR</h1>
+      </div>
+      <div class="actions">History</div>
+    </header>
+
+    <section class="upload-box">
+      <div id="dropZone" class="drop-zone">
+        <div class="drop-copy">
+          <p class="drop-main">Drag & Drop or Click to Upload Inscription Image</p>
+          <p class="drop-sub">(Max file size: {{ max_size_mb }} MB)</p>
+        </div>
+        <input id="fileInput" type="file" accept="image/*" hidden />
+        <div class="button-row">
+          <button id="processBtn" class="btn primary" type="button">Upload Image</button>
+          <button id="clearBtn" class="btn ghost" type="button">Clear</button>
+        </div>
+      </div>
+      <p id="selectedFileName" class="selected-file"></p>
+      <p id="pipelineNote" class="selected-file"></p>
+    </section>
+
+    <section class="pipeline-stage card">
+      <div class="pipeline-head">
+        <h2>Layer-wise Processing</h2>
+        <p id="pipelineStageLabel" class="pipeline-stage-label">Waiting for image</p>
+      </div>
+      <ol id="pipelineFlow" class="pipeline-flow">
+        <li class="pipeline-step" data-stage="preprocessing">
+          <span class="step-index">1</span>
+          <span class="step-label">Preprocessing</span>
+        </li>
+        <li class="pipeline-step" data-stage="segmentation">
+          <span class="step-index">2</span>
+          <span class="step-label">Segmentation</span>
+        </li>
+        <li class="pipeline-step" data-stage="prediction">
+          <span class="step-index">3</span>
+          <span class="step-label">Prediction</span>
+        </li>
+        <li class="pipeline-step" data-stage="mapping">
+          <span class="step-index">4</span>
+          <span class="step-label">Mapping</span>
+        </li>
+        <li class="pipeline-step" data-stage="result">
+          <span class="step-index">5</span>
+          <span class="step-label">Result</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="preview-grid">
+      <article class="card">
+        <h2>Original Inscription Image</h2>
+        <div class="image-wrap"><img id="originalImage" alt="Original image preview"></div>
+      </article>
+      <article class="card">
+        <h2>Preprocessed Inscription Image</h2>
+        <div class="image-wrap"><img id="processedImage" alt="Preprocessed image preview"></div>
+      </article>
+      <article class="card">
+        <h2>Segmentation Overlay</h2>
+        <div class="image-wrap"><img id="overlayImageTop" alt="Segmentation overlay preview"></div>
+      </article>
+    </section>
+
+    <section class="results card">
+      <div class="result-head">
+        <h2>Recognized Text</h2>
+        <select id="exportType" class="select">
+          <option value="txt">Export TXT</option>
+          <option value="csv">Export CSV</option>
+          <option value="json">Export JSON</option>
+        </select>
+        <button id="exportBtn" class="btn secondary" type="button">Export</button>
+      </div>
+      <div id="recognizedText" class="recognized tamil"></div>
+      <div class="metrics">
+        <p><strong>Confidence:</strong> <span id="confidenceValue">-</span></p>
+        <p><strong>Segments:</strong> <span id="segmentsValue">-</span></p>
+      </div>
+      <h3>Segmented Overlay</h3>
+      <div class="image-wrap"><img id="overlayImage" alt="Segmented overlay preview"></div>
+      <h3>Pipeline Log</h3>
+      <ul id="statusList" class="status-list"></ul>
+      <p id="errorText" class="error-text"></p>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js', v='20260401c') }}"></script>
+</body>
+</html>

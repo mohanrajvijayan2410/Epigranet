@@ -1,0 +1,8 @@
+flask==3.0.3
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+torch==2.2.2
+torchvision==0.17.2
+pillow==10.4.0
+streamlit==1.37.1
+huggingface-hub==0.24.6
