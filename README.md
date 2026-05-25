@@ -63,10 +63,9 @@ The OCR pipeline is organized into three major stages:
    - cosine similarity against stored reference embeddings
    - class-to-Tamil label mapping through `class_mapping_209 (1).json`
 
-The runtime currently supports two model architectures:
+The runtime currently supports following model architectures:
 
 - `resnet18`
-- `tiny_cnn`
 
 The bundled checkpoint is designed for `resnet18`, while `EPIGRANET_MODEL_ARCH=auto` allows the runtime to infer the correct architecture from the checkpoint.
 
