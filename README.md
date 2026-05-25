@@ -22,7 +22,7 @@ Recognized OCR flow:
 - map predicted class labels to Tamil character output
 
 ## Dataset
-
+Dataset Link: [https://drive.google.com/drive/folders/1upVeyreDrhaEtGtyFVM7sVDlJYj0Ha99?usp=sharing](https://drive.google.com/drive/folders/1upVeyreDrhaEtGtyFVM7sVDlJYj0Ha99?usp=sharing)
 - **Primary dataset**: `aug_dataset/`
 - **Number of classes**: `209`
 - **Label mapping file**: `class_mapping_209 (1).json`
