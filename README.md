@@ -85,7 +85,7 @@ The repository includes saved training and comparison visuals for the project.
 
 ### Model Comparison
 ![Comparison Result](implementation_photo_video/result-comparison.jpeg)
-
+![Comparison Result-1](implementation_photo_video/RESULT-comparison.jpeg)
 ## Sample Video
 
 [Watch the implementation demo](https://drive.google.com/file/d/1Z_loeIS1vBP_x8yBUspD67ZxI_5WpVZs/view?usp=sharing)
