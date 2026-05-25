@@ -88,7 +88,7 @@ The repository includes saved training and comparison visuals for the project.
 
 ## Sample Video
 
-[Watch the implementation demo](implementation_photo_video/implementation-video.mp4)
+[Watch the implementation demo](https://drive.google.com/file/d/1Z_loeIS1vBP_x8yBUspD67ZxI_5WpVZs/view?usp=sharing)
 
 ## System Workflow
 
